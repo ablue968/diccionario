@@ -1,0 +1,28 @@
+<div class="title">
+    <h1>Diccionario Online</h1>
+    <h2>Si no lo encuentra, no existe</h2>
+</div>
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input type="text"
+             placeholder="Pick one"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto"
+             (input)="buscar( $event )">
+      <mat-autocomplete 
+        autoActiveFirstOption 
+        #auto="matAutocomplete"
+        (optionSelected)="opcionSeleccionada($event)">
+        <mat-option *ngFor="let palabra of filteredOptions| async" [value]="palabra.palabra | titlecase" [routerLink]="['/espanol', palabra.palabra]">
+              {{palabra.palabra}}
+        </mat-option>
+        <mat-option value="" *ngIf="diccionario.length === 0 && myControl.touched  ">
+            ups... seguro que es la palabra correcta?
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  
+

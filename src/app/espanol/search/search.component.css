@@ -1,0 +1,14 @@
+.example-form {
+  width: 100%;
+}
+  
+.example-full-width {
+  width: 100%;
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 5rem;
+}

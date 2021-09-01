@@ -1,0 +1,22 @@
+.card{
+    padding-top: -1rem;
+    border-radius: 0.5rem;
+    background-color: #3c3c3c;
+    box-shadow: 5px 5px 15px 5px #0f0f0f;
+}
+
+.button_center{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 2rem;
+
+}
+
+.button{
+    margin-right: 2rem;;
+}
+
+p{
+    margin: 1rem;
+}
