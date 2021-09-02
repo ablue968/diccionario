@@ -1,36 +1,38 @@
-<mat-grid-list cols="1" *ngIf= "!palabra; else palabraRef">
-    <mat-grid-tile>
-        <mat-spinner></mat-spinner>
-    </mat-grid-tile>
-</mat-grid-list>
-
-<ng-template #palabraRef>
-    <mat-grid-list cols="2" rowHeight="9rem" gutterSize="1rem">
-        <mat-grid-tile class="card">
-            <h1>{{palabra.palabra  | titlecase}}</h1>
-        </mat-grid-tile>
-        <mat-grid-tile class="card">
-            <p>Significado: {{palabra.descripcion  | titlecase}}</p>
-            <p>Fecha de Alta: {{palabra.fechaAlta | date }}</p>
-            <p *ngIf= "palabra.fechaModificacion">Fecha de Modificación: {{palabra.fechaModificacion}}</p>            
+<div class="results-center">
+    <mat-grid-list cols="1" *ngIf= "!palabra; else palabraRef">
+        <mat-grid-tile>
+            <mat-spinner></mat-spinner>
         </mat-grid-tile>
     </mat-grid-list>
-    <br>
-    <mat-grid-list cols="1" rowHeight="5rem">
-        <mat-grid-tile class="card" *ngIf= "palabra.palabrasIngles">
-            <div *ngFor="let palabraIngles of palabra.palabrasIngles">
-                <p>Entradas en inglés: {{palabraIngles.palabra  | titlecase}}</p>
-                <p>Fecha de alta: {{palabraIngles.fechaAlta | date}}</p>
-            </div>
-        </mat-grid-tile>
-    </mat-grid-list>
-    <div class="button_center">
-        <button mat-raised-button class="button" color="primary"  [routerLink]="['/espanol']"> Ir a lista</button>
-        <button mat-raised-button class="button"> Modificar</button>
-        <button mat-raised-button class="button" color="accent"  [routerLink]="['/']"> Ir a Home</button>
-    </div>
 
-</ng-template>
+    <ng-template #palabraRef>
+        <mat-grid-list cols="2" rowHeight="9rem" gutterSize="1rem">
+            <mat-grid-tile class="card">
+                <h1>{{palabra.palabra  | titlecase}}</h1>
+            </mat-grid-tile>
+            <mat-grid-tile class="card">
+                <p>Significado: {{palabra.descripcion  | titlecase}}</p>
+                <p>Fecha de Alta: {{palabra.fechaAlta | date }}</p>
+                <p *ngIf= "palabra.fechaModificacion">Fecha de Modificación: {{palabra.fechaModificacion}}</p>            
+            </mat-grid-tile>
+        </mat-grid-list>
+        <br>
+        <mat-grid-list cols="1" rowHeight="5rem" >
+            <mat-grid-tile class="card" *ngFor="let palabraIngles of palabra.palabrasIngles" >
+                <div *ngIf= "palabra.palabrasIngles != undefined">
+                    <p>Entradas en inglés: {{palabraIngles.palabra  | titlecase}}</p>
+                    <p>Fecha de alta: {{palabraIngles.fechaAlta | date}}</p>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <div class="button_center">
+            <button mat-raised-button class="button" color="primary"  [routerLink]="['/espanol']"> Ir a lista</button>
+            <button mat-raised-button class="button" (click)="update(palabra.palabra)"> Modificar</button>
+            <button mat-raised-button class="button" color="accent"  [routerLink]="['/']"> Ir a Home</button>
+        </div>
+    </ng-template>
 
+</div>
+    
 
 

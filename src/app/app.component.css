@@ -1,7 +1,12 @@
 .container{
     padding: 1rem;
+    height: 80%;
     max-width: 80rem;
     min-width: 40rem;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     margin: auto;
 }
 

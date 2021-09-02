@@ -25,4 +25,8 @@ export class ResultsComponent implements OnInit {
 
   }
 
+  update( palabra : string){
+    console.log(palabra)
+  }
+
 }

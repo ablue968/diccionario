@@ -15,9 +15,9 @@
 
             <a routerLink="" mat-list-item class="center-x"> 
                 Home 
-            </a>
-            
+            </a>          
         </mat-nav-list>
+        
     </mat-sidenav>
     
     <mat-toolbar>
@@ -25,7 +25,9 @@
             <mat-icon>menu</mat-icon>
         </button>
         <span class="stretcher"></span>
-        <app-create></app-create>
+        <button mat-raised-button (click)="openDialog()" color="primary"> 
+            <mat-icon>add_circle_outline</mat-icon>
+        </button>
     </mat-toolbar>
     <div class="container">
         <router-outlet></router-outlet>

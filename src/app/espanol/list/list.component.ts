@@ -10,6 +10,8 @@ import { Espanol } from '../interfaces/espanol.interface';
 export class ListComponent implements OnInit {
 
   arrEspanol : Espanol[] = [];
+
+
   constructor(private espanolS: EspanolService) { }
 
   ngOnInit(): void {

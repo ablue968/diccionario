@@ -20,3 +20,7 @@
 p{
     margin: 1rem;
 }
+
+body{
+    height: 80vh;
+}

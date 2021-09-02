@@ -1,0 +1,9 @@
+.button-send_style{
+    display: flex;
+    justify-content:flex-end;
+    flex-direction: row;
+}
+
+.title{
+    text-align: center;
+}

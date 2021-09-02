@@ -10,6 +10,8 @@ import { CardComponent } from './card/card.component';
 import { MaterialModule } from '../material/material.module';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateComponent } from '../shared/create/create.component';
+import { UpdateComponent } from './update/update.component';
 
 
 
@@ -21,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ResultsComponent,
     CardComponent,
     HomeComponent,
+    CreateComponent,
+    UpdateComponent
     
   ],
   imports: [

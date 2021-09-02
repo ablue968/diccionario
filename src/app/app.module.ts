@@ -9,13 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CreateComponent } from './shared/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorComponent,
-    CreateComponent
   ],
   imports: [
     BrowserModule,

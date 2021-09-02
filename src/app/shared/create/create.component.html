@@ -1,9 +1,22 @@
-
 <div>
-    <button mat-raised-button (click)="openDialog()"> <mat-icon>add_circle_outline</mat-icon></button>
-    <div *ngIf="animal">
-        You chose: <i>{{animal}}</i>
+    <div class="title">
+        <h2>Añadiendo palabra</h2>
     </div>
-</div>        
-
- 
+    <form class="submit_form" [formGroup]="palabraForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Inserta palabra" formControlName="palabra" required>
+            <mat-error *ngIf="invalid('palabra')">{{getErrorMessage( 'palabra' )}}</mat-error>
+            </mat-form-field>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Descripción" formControlName="descripcion" required>
+            <mat-error *ngIf="invalid('descripcion')">{{getErrorMessage( 'descripcion' )}}</mat-error>
+            </mat-form-field>
+        <mat-form-field appearance="fill">
+            <input matInput placeholder="Inserta traducción en inglés" formControlName="palabrasIngles" required>
+            <mat-error *ngIf="invalid('palabrasIngles')">{{getErrorMessage( 'palabrasIngles' )}}</mat-error>
+            </mat-form-field>
+        <div class="button-send_style">
+            <button mat-raised-button color="accent" type="submit"> submit</button>
+        </div>
+    </form>
+</div>
